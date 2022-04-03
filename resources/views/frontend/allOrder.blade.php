@@ -22,13 +22,13 @@
           <td>{{ $order->price }}</td>
           <td>{{ $order->quantity }}</td>
           <td>
-              <a href="#" class="btn btn-info">Edit</a>
-              <a href="#" class="btn btn-danger">Delete</a>
+              <a href="/editOrder/{{ $order->orderId }}" class="btn btn-info">Edit</a>
+              <a href="/deletetOrder/{{ $order->orderId }}" class="btn btn-danger">Delete</a>
           </td>
         </tr>
       @endforeach
     </tbody>
   </table>
 
-  <a href="{{ route('addOrder') }}" class="btn btn-primary">Add item</a>
+  <a href="/addOrder/{{ $order->item->itemId }}" class="btn btn-primary">Add item</a>
 @endsection

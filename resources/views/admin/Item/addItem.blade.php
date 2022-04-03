@@ -10,9 +10,11 @@
 
     <form action="{{ route('createItem') }}" method="post" enctype="multipart/form-data">
         @csrf
+        <div class="container mt-4">
+
         <div class="mb-3">
-            <label for="menuName" class="form-label">Item Name</label>
-            <input type="text" name="itemName" class="form-control">
+            <label for="menuName" class="form-label ">Item Name</label>
+            <input type="text" name="itemName" class="ms-5">
         </div>
         <div class="mb-3">
             <label for="menuName" class="form-label">Item Image</label>
@@ -37,6 +39,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Add &rarr;</button>
+        </div>
     </form>
 
 @endsection

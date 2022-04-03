@@ -29,7 +29,7 @@ Route::post('/createItem',[ItemController::class,'create'])->name('createItem');
 Route::get('/allItem',[ItemController::class,'all'])->name('allItem');
 Route::get('/editItem/{itemId}',[ItemController::class,'edit'])->name('editItem');
 Route::post('/updateItem',[ItemController::class,'update'])->name('updateItem');
-// Route::get('/deleteItem',[ItemController::class,'index'])->name('addItem');
+Route::get('/deleteItem/{itemId}',[ItemController::class,'delete'])->name('deleteItem');
 
 Route::get('/addMenu',[MenuController::class,'index'])->name('addMenu');
 Route::post('/createMenu',[MenuController::class,'create'])->name('createMenu');
