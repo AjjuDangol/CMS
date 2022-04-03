@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <div class="mt-4 d-flex p-2 w-100 white-text">
+        <div class=" d-flex p-2 w-100 white-text">
             <h1 class="text-white">E<span class="ease ">A</span>SE CANTEEN</h1>
 
         </div>
