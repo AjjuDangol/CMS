@@ -62,4 +62,13 @@ class orderController extends Controller
         return back()->with('message', 'Order deleted successfully.');
     }
 
+    public function adminOrder() {
+        $orders = Order::all();
+        return view('admin.UserOrder.orders', compact('orders'));
+    }
+
+    public function notification(){
+
+    }
+
 }

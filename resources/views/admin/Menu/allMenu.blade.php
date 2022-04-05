@@ -29,8 +29,10 @@
             @endforeach
         </tbody>
       </table>
+<div class="container text-center">
 
-<a href="{{ route('addMenu') }}" class="btn btn-primary position-absolute top-50 start-50 translate-middle">Add Menu</a>
+<a href="{{ route('addMenu') }}" class="btn btn-primary ">Add Menu</a>
+</div>
 </div>
 
 @endsection

@@ -35,7 +35,7 @@
                                             <img src="../image/{{ $i->image }}" class="card-img-top" height="200"
                                                 alt="...">
                                             <div class="card-body">
-                                                <h5 class="card-title">{{ $i->itemName }}</h5>
+                                                <h5 class="card-title">{{ $i->itemName }} - {{ $i->menu->menuName }}</h5>
                                                 <p class="card-text">Rs. {{ $i->price }}</p>
                                                 <div class="dropdown">
                                                     <a class="btn btn-info" href="#" role="button"

@@ -29,9 +29,12 @@
             </tr>
           @endforeach
         </tbody>
+
       </table>
+      <div class="container mt-5 text-center">
+        <a href="{{ route('addItem') }}" class="btn btn-primary">Add item</a>
+    </div>
+
 </div>
-<div class="container mt-5">
-    <a href="{{ route('addItem') }}" class="mt-5 btn btn-primary position-absolute top-50 start-50 translate-middle">Add item</a>
-</div>
+
 @endsection

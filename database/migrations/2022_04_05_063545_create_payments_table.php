@@ -14,7 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
+            $table->id('paymentID');
+            $table->string('paypalID');
+            $table->string('itemName');
+            $table->string('userName');
+            $table->string('totalPrice');
+            $table->unsignedBigInteger('orderId');
+            $table->foreign('orderId')->references('orderId')->on('orders')->onDelete('cascade');
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

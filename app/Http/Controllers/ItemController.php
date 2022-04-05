@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ItemController extends Controller
 {
     //CRUD
-    
+
     //show add page
     public function index() {
         $menus = Menu::all();

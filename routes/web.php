@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\userMenuController;
 use App\Http\Controllers\orderController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,9 +43,14 @@ Route::get('/allMenu',[MenuController::class,'all'])->name('allMenu');
 Route::get('/addOrder/{itemId}',[orderController::class,'index'])->name('addOrder');
 Route::post('/createOrder',[orderController::class,'create'])->name('createOrder');
 Route::get('/allOrder',[orderController::class,'all'])->name('allOrder');
-Route::get('/editOrder/{orderId}',[MenuController::class,'edit'])->name('editOrder');
-Route::post('/updateOrder',[MenuController::class,'updateOrder'])->name('updateOrder');
-Route::get('/deleteOrder/{orderId}',[MenuController::class,'delete'])->name('deleteOrder');
+Route::get('/editOrder/{orderId}',[orderController::class,'edit'])->name('editOrder');
+Route::post('/updateOrder',[orderController::class,'updateOrder'])->name('updateOrder');
+Route::get('/deleteOrder/{orderId}',[orderController::class,'delete'])->name('deleteOrder');
+Route::get('/adminOrder',[orderController::class,'adminOrder'])->name('adminOrder');
+
+
+Route::post('/createPayment',[PaymentController::class,'create'])->name('createPayment');
+Route::get('/addPayment/{orderId}',[PaymentController::class,'index'])->name('addPayment');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
