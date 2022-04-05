@@ -13,11 +13,7 @@ class orderController extends Controller
     public function index($itemId) {
         $this->itemId=$itemId;
         $items=Item::where('itemId',$this->itemId)->first();
-        $orders = Order::orderBy('created_at','DESC')
-            ->where('userId',Auth::user()->name)
-            ->whereDate('created_at',date('Y-m-d'))
-            ->get();
-        return view('frontend.addOrder', compact('items'));
+        return view('frontend.Order.addOrder', compact('items'));
     }
 
     public function create(Request $request) {
@@ -29,20 +25,24 @@ class orderController extends Controller
         $order->quantity = $request->quantity;
         $order->totalPrice = $request->totalPrice;
         $order->save();
-        return back()->with('message', 'Order added successfully');
+        // return back()->with('message', 'Order added successfully');
+        return redirect()->route('allOrder');
     }
 
     //used to show data
     public function all() {
-        $orders = Order::all();
-        return view('frontend.allOrder', compact('orders'));
+        $orders = Order::orderBy('created_at','DESC')
+            ->where('userId',Auth::user()->id)
+            ->whereDate('created_at',date('Y-m-d'))
+            ->get();
+        return view('frontend.Order.allOrder', compact('orders'));
     }
 
     //get id and show edit page
     public function edit($orderId) {
         $items = Item::all();
         $order = Order::find($orderId);
-        return view('frontend.editOrder', compact('order', 'items'));
+        return view('frontend.Order.editOrder', compact('order', 'items'));
     }
 
     //update data of item
@@ -58,7 +58,7 @@ class orderController extends Controller
     }
 
     public function delete($orderId) {
-        Order::where('OrderID', $orderId)->delete();
+        Order::where('orderID', $orderId)->delete();
         return back()->with('message', 'Order deleted successfully.');
     }
 

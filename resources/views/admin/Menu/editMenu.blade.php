@@ -1,13 +1,13 @@
 @extends('layouts.main')
 @section('content')
-    
+
 
     <div class="alert alert-success" role="alert">
         @if (Session::has('message'))
             {{ Session::get('message') }}
         @endif
     </div>
-    
+
     <form action="{{ route('updateMenu') }}" method="post">
         @csrf
         <input type="hidden" name="menuId" value="{{ $menu->menuId }}">

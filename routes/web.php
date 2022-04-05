@@ -42,6 +42,9 @@ Route::get('/allMenu',[MenuController::class,'all'])->name('allMenu');
 Route::get('/addOrder/{itemId}',[orderController::class,'index'])->name('addOrder');
 Route::post('/createOrder',[orderController::class,'create'])->name('createOrder');
 Route::get('/allOrder',[orderController::class,'all'])->name('allOrder');
+Route::get('/editOrder/{orderId}',[MenuController::class,'edit'])->name('editOrder');
+Route::post('/updateOrder',[MenuController::class,'updateOrder'])->name('updateOrder');
+Route::get('/deleteOrder/{orderId}',[MenuController::class,'delete'])->name('deleteOrder');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
