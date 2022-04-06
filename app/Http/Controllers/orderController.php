@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\message;
+use Illuminate\Support\Facades\Notification;
 
 class orderController extends Controller
 {
@@ -68,7 +71,10 @@ class orderController extends Controller
     }
 
     public function notification(){
-
+        //  User::where('userId',Auth::user()->id);
+         $user = User::all();
+         Notification::send($user, new message);
+         dd('done');
     }
 
 }
