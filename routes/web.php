@@ -47,11 +47,14 @@ Route::get('/editOrder/{orderId}',[orderController::class,'edit'])->name('editOr
 Route::post('/updateOrder',[orderController::class,'updateOrder'])->name('updateOrder');
 Route::get('/deleteOrder/{orderId}',[orderController::class,'delete'])->name('deleteOrder');
 Route::get('/adminOrder',[orderController::class,'adminOrder'])->name('adminOrder');
-Route::get('/notification',[orderController::class,'notification'])->name('notification');
+Route::get('/notification/{userId}',[orderController::class,'notification'])->name('notification');
 
 
 Route::post('/createPayment',[PaymentController::class,'create'])->name('createPayment');
 Route::get('/addPayment/{orderId}',[PaymentController::class,'index'])->name('addPayment');
+
+
+Route::post('/rating/{itemId}', [userMenuController::class,'postStar'])->name('postStar');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

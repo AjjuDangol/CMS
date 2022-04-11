@@ -83,3 +83,10 @@
                 </ul>
             </div>
     </nav>
+
+</body>
+<script>
+    $('#addStar').change('.star', function(e) {
+    $(this).submit();
+    });
+</script>

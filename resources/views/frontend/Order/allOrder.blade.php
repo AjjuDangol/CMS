@@ -16,10 +16,11 @@
         <tr>
           {{-- <td>{{ $order->userId }}</td> --}}
           <td>{{ $order->itemName }}</td>
-          <td>{{ $order->price }}</td>
+          <td>{{ $order->totalPrice }}</td>
           <td>{{ $order->quantity }}</td>
           <td>
               <a href="/addPayment/{{ $order->orderId }}" class="btn btn-info">Pay</a>
+
               <a href="/deleteOrder/{{ $order->orderId }}" class="btn btn-danger">Delete</a>
           </td>
         </tr>

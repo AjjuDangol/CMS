@@ -19,7 +19,7 @@
           <td>{{ $order->totalPrice}}</td>
           <td>{{ $order->quantity }}</td>
           <td>
-              <a href="/editOrder/{{ $order->orderId }}" class="btn btn-info">Edit</a>
+              <a href="/notification/{{$order->userId}}" class="btn btn-info">Send message</a>
               <a href="/deleteOrder/{{ $order->orderId }}" class="btn btn-danger">Delete</a>
           </td>
         </tr>

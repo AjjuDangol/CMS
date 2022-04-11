@@ -14,4 +14,9 @@ class Item extends Model
     public function menu() {
         return $this->belongsTo(Menu::class, 'menuId');
     }
+    public function rating()
+    {
+    return $this->hasMany(Rating::class);
+    }
+
 }

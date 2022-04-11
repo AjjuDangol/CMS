@@ -71,10 +71,10 @@ class orderController extends Controller
     }
 
     public function notification(){
-        //  User::where('userId',Auth::user()->id);
+        //  $user= User::where('id','user')->get();
          $user = User::all();
          Notification::send($user, new message);
-         dd('done');
+         return redirect()->route('adminOrder');
     }
 
 }
