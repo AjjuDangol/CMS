@@ -23,4 +23,10 @@ class userMenuController extends Controller
         $post->ratings()->save($rating);
         return redirect()->back();
   }
+
+  public function index()
+    {
+        $menu = Menu::with('items')->get();
+    	return view()->exists('welcome') ? view('welcome',compact('menu')) : '';
+    }
 }

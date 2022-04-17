@@ -54,24 +54,33 @@
 @extends('layouts.main')
 @section('content')
     <x-jet-validation-errors class="mb-4" />
-
-    <form method="POST" class="d-flex align-self-center" action="{{ route('login') }}">
-        @csrf
-        <div class="d-flex align-content-center ">
-            <div class="m-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="s card transparent container mt-5">
+            <form method="POST" class="px-5 py-3 container  " action="{{ route('login') }}">
+                @csrf
+              <div class="mb-3">
+                <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleDropdownFormPassword1" placeholder="Password">
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="dropdownCheck" name="remember">
+                  <label class="form-check-label" for="dropdownCheck">
+                    Remember me
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+            <div class="dropdown-divider"></div>
+            <div class="container text-center">
+                New around here?
+            <a class="" href="/register"> Sign up</a> <br>
+            <a class="" href="{{ route('password.request') }}">Forgot password?</a>
             </div>
-            <div class="m-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            {{-- <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div> --}}
-
         </div>
-        <button type="submit" class="m-5 btn btn-primary align-self-center">Submit</button>
-    </form>
+
 @endsection

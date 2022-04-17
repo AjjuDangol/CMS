@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -25,4 +25,22 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+
+@extends('layouts.main')
+@section('content')
+    <x-jet-validation-errors class="mb-4" />
+        <div class="s card transparent container mt-5">
+            <form method="POST" action="{{ route('password.confirm') }}" class="px-5 py-3 container  " >
+                @csrf
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input class="form-control" type="password" name="password" required autocomplete="current-password" autofocus>
+              </div>
+              <div class="dropdown-divider"></div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+        </div>
+
+@endsection

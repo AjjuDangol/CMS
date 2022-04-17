@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    
+
     @if (Session::has('message'))
         <div class="alert alert-success" role="alert">
             {{ Session::get('message') }}
@@ -28,7 +28,7 @@
                     <option value="{{ $menu->menuId }}">{{ $menu->menuName }}</option>
                 @endforeach
             </select>
-        </div> 
+        </div>
         <div class="mb-3">
             <label for="menuName" class="form-label">Description</label>
             <input type="text" name="description" value="{{ $item->description }}" class="form-control">

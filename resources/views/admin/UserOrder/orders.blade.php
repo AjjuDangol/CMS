@@ -20,6 +20,7 @@
           <td>{{ $order->quantity }}</td>
           <td>
               <a href="/notification/{{$order->userId}}" class="btn btn-info">Send message</a>
+              {{-- <a href="{{ route('notification',[user] ) }}" class="btn btn-info">Send message</a> --}}
               <a href="/deleteOrder/{{ $order->orderId }}" class="btn btn-danger">Delete</a>
           </td>
         </tr>

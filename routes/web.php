@@ -6,6 +6,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\userMenuController;
 use App\Http\Controllers\orderController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Livewire\User\UserReviewComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,14 @@ Route::get('/editItem/{itemId}',[ItemController::class,'edit'])->name('editItem'
 Route::post('/updateItem',[ItemController::class,'update'])->name('updateItem');
 Route::get('/deleteItem/{itemId}',[ItemController::class,'delete'])->name('deleteItem');
 
+Route::get('/addhome',[HomeController::class,'index'])->name('addhome');
+Route::post('/createHome',[HomeController::class,'create'])->name('createHome');
+Route::get('/allhome',[HomeController::class,'all'])->name('allhome');
+Route::get('/edithome/{homeId}',[HomeController::class,'edit'])->name('edithome');
+Route::post('/updatehome',[HomeController::class,'update'])->name('updatehome');
+Route::get('/deletehome/{homeId}',[HomeController::class,'delete'])->name('deletehome');
+
+
 Route::get('/addMenu',[MenuController::class,'index'])->name('addMenu');
 Route::post('/createMenu',[MenuController::class,'create'])->name('createMenu');
 Route::get('/editMenu/{menuId}',[MenuController::class,'edit'])->name('editMenu');
@@ -54,8 +63,12 @@ Route::post('/createPayment',[PaymentController::class,'create'])->name('createP
 Route::get('/addPayment/{orderId}',[PaymentController::class,'index'])->name('addPayment');
 
 
-Route::post('/rating/{itemId}', [userMenuController::class,'postStar'])->name('postStar');
+Route::get('/user/review/{itemId}', [UserReviewComponent::class,'render'])->name('user.review');
+Route::post('/rating/{order}', 'OrderController@postStar')->name('postStar');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group( function () {
+    // Route::get('/user/review/{itemId}', [UserReviewComponent::class,'mount'])->name('user.review');
+    // return view('dashboard');
+});
+// ->name('dashboard');

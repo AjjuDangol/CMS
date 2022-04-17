@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'menus';
     protected $primaryKey = 'menuId';
+
+    public function dish()
+    {
+    	return $this->hasMany(Item::class);
+    }
 }

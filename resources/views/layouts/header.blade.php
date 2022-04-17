@@ -17,8 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
         <div class=" d-flex p-2 w-100 white-text">
-            <h1 class="text-white">E<span class="ease ">A</span>SE CANTEEN</h1>
-
+            <a class="nav-link" href="/"><h1 class="text-white">E<span class="ease ">A</span>SE CANTEEN</h1></a>
         </div>
             <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -85,8 +84,4 @@
     </nav>
 
 </body>
-<script>
-    $('#addStar').change('.star', function(e) {
-    $(this).submit();
-    });
-</script>
+

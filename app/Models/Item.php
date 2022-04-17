@@ -19,4 +19,9 @@ class Item extends Model
     return $this->hasMany(Rating::class);
     }
 
+    public function dish()
+    {
+    	return $this->belongsTo(Menu::class);
+    }
+
 }
