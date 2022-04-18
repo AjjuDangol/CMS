@@ -33,18 +33,30 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('menu') }}">Menu</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('allMenu') }}">AdminMenu</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('allItem') }}">Item</a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('adminOrder') }}">Order</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('adminRating') }}">Order</a>
-                                </li>
+                                <div class="dropdown">
+                                    <button class="nav-link btn btn-none dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Admin Control
+                                    </button>
+                                    <ul class="dropdown-menu bg-dark outline-none btn btn-none" aria-labelledby="dropdownMenuButton1">
+                                      <li class="nav-item dropdown-item">
+                                        <a class="nav-link " href="{{ route('allMenu') }}">Admin Menu</a>
+                                    </li>
+                                    <li class="nav-item dropdown-item">
+                                        <a class="nav-link" href="{{ route('allItem') }}">Admin Item</a>
+                                    </li>
+                                    <li class="nav-item dropdown-item">
+                                        <a class="nav-link" href="{{ route('AdminRating') }}">Admin Rating</a>
+                                    </li>
+                                    </ul>
+                                  </div>
+
+                                {{-- <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('profile.show') }}">Profile</a>
+                                </li> --}}
 
                                 <li class="nav-item">
                                     <a class="nav-link" aria-current="page" href="{{ route('logout') }}"

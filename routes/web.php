@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/',[HomeController::class,'home'])->name('home');
+Route::get('/adminhome',[HomeController::class,'adminHome'])->name('adminhome');
 Route::get('/menu',[userMenuController::class,'menu'])->name('menu');
 
 Route::get('/addItem',[ItemController::class,'index'])->name('addItem');
