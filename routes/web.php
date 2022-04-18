@@ -63,7 +63,7 @@ Route::post('/createPayment',[PaymentController::class,'create'])->name('createP
 Route::get('/addPayment/{orderId}',[PaymentController::class,'index'])->name('addPayment');
 
 
-Route::get('/user/review/{itemId}', [UserReviewComponent::class,'render'])->name('user.review');
+Route::get('/user/review/{itemId}', UserReviewComponent::class)->name('user.review');
 Route::post('/rating/{order}', 'OrderController@postStar')->name('postStar');
 
 

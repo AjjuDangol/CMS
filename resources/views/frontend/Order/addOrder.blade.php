@@ -28,29 +28,37 @@
             </div>
             <div class="col-6">
                 <div class="mb-3">
-                    <label for="price" class="form-label " ><h3>Price</h3></label>
-                    <input type="text" name="price" id="price" value="{{ $items->price }}" class="form-control changeValue">
+                    <label for="price" class="form-label" ><h3>Price</h3></label>
+                    <input type="text" name="price" id="pric" value="{{ $items->price }}" class="form-control value">
                 </div>
             </div>
             <div class="col-6">
                 <div class="mb-3">
                     <label for="quant" class="form-label " ><h3>Quantity</h3></label>
-                    <input type="number" name="quantity" id="quant" class="form-control changeValue">
+                    <input type="number" name="quantity" id="quantity" class="form-control value">
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="ItemPrice" class="form-label"><h3>Total Price</h3></label>
-                <input type="text" name="totalPrice" class="form-control" id="totalPrice" readonly>
-                {{-- @foreach ($orders as $order )
-                <div class="pice"><p>${{ $order->price * $order->$quantity }}</p></div>
-                @endforeach --}}
-
+                <input type="text" name="totalPrice" class="form-control" id="tp" readonly>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Add &rarr;</button>
 
 
     </form>
+
+
+    {{-- <script>
+        $(".value").change(function(e){
+            var a = $('#price').val();
+            var b = $('#quant').val();
+            var total = a * b;
+            $("#tp").val(total);
+        });
+
+
+    </script> --}}
 
 @endsection
