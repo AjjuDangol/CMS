@@ -74,8 +74,7 @@ Route::get('/rating/{itemId}',[RatingController::class,'index'])->name('addRatin
 Route::post('/createRating',[RatingController::class,'create'])->name('createRating');
 Route::get('/AdminRating',[RatingController::class,'all'])->name('AdminRating');
 
-Route::middleware(['auth:sanctum', 'verified'])->group( function () {
-    // Route::get('/user/review/{itemId}', [UserReviewComponent::class,'mount'])->name('user.review');
-    // return view('dashboard');
-});
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 // ->name('dashboard');

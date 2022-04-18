@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function home() {
         $item = Item::all();
         $menu = Menu::all();
-        return view('frontend.admin.adminhome', compact('menu','item'));
+        return view('admin.adminhome', compact('menu','item'));
     }
     public function adminHome() {
         $item = Item::all();
@@ -20,9 +20,6 @@ class HomeController extends Controller
         return view('frontend.home.home', compact('menu','item'));
     }
 
-    public function index() {
-        return view('admin.Home.addhome');
-    }
 
     //add data in item
     // public function create(Request $request) {
