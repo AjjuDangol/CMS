@@ -9,3 +9,8 @@ $(".value").change(function(e){
 $('#addStar').change('.star', function(e) {
     $(this).submit();
     });
+
+
+// $('#stars').on('click',function(){
+//     $(this).addClass('active');
+// })

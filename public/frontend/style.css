@@ -11,7 +11,34 @@ body{
 .ease{
     color:brown;
 }
+.ner{
+    background-color: transparent;
+    border-color: transparent;
+}
 
+.stars{
+    display: inline-block;
+    color: white;
+    text-shadow: 2px 2px 7px grey;
+    font-size: xx-large;
+}
+
+.stars:hover{
+    color: yellow;
+}
+
+
+.stars.active{
+    color:yellow
+}
+
+.stars.secondary-active{
+    color:yellow
+}
+
+input[type="radio"]{
+    display: none;
+}
 /** rating **/
 div.stars {
     display: inline-block;

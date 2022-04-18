@@ -86,7 +86,7 @@
                                                         <p>Rs. {{ $i->price }}</p>
                                                         <a href="{{ route('addOrder', ['itemId' => $i->itemId]) }}"
                                                             class="btn btn-primary">Order</a>
-                                                        <a href="{{ route('user.review', ['itemId' => $i->itemId]) }}"
+                                                        <a href="{{ route('addRating', ['itemId' => $i->itemId]) }}"
                                                             class="btn btn-primary">Review</a>
                                                         {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                                 Rating
