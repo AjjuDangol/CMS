@@ -6,6 +6,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\userMenuController;
 use App\Http\Controllers\orderController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\Rating;
 use App\Http\Livewire\User\UserReviewComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -66,6 +67,9 @@ Route::get('/addPayment/{orderId}',[PaymentController::class,'index'])->name('ad
 Route::get('/user/review/{itemId}', UserReviewComponent::class)->name('user.review');
 Route::post('/rating/{order}', 'OrderController@postStar')->name('postStar');
 
+
+Route::get('/rating',[Rating::class,'index'])->name('addRating');
+Route::post('/createRating',[Rating::class,'create'])->name('createRating');
 
 Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     // Route::get('/user/review/{itemId}', [UserReviewComponent::class,'mount'])->name('user.review');

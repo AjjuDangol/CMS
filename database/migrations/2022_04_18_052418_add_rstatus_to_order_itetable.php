@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
-            $table->id();
-            $table->integer('rating');
-            $table->string('review');
-            $table->bigInteger('itemId')->unsigned();
-            $table->foreign('itemId')->references('itemId')->on('items')->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('order_itetable', function (Blueprint $table) {
+            //
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ratings');
+        Schema::table('order_itetable', function (Blueprint $table) {
+            //
+        });
     }
 };
