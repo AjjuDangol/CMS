@@ -22,6 +22,7 @@ class orderController extends Controller
 
     public function create(Request $request)
     {
+
         $order = new Order();
         $order->userId = $request->userId;
         $order->itemName = $request->itemName;
@@ -45,25 +46,25 @@ class orderController extends Controller
     }
 
     //get id and show edit page
-    public function edit($orderId)
-    {
-        $items = Item::all();
-        $order = Order::find($orderId);
-        return view('frontend.Order.editOrder', compact('order', 'items'));
-    }
+    // public function edit($orderId)
+    // {
+    //     $items = Item::all();
+    //     $order = Order::find($orderId);
+    //     return view('frontend.Order.editOrder', compact('order', 'items'));
+    // }
 
     //update data of item
-    public function update(Request $request)
-    {
-        $orders = Order::find($request->orderId);
-        $orders->itemName = $request->itemName;
-        $orders->price = $request->price;
-        $orders->itemId = $request->itemId;
-        $orders->quantity = $request->quantity;
-        $orders->totalPrice = $request->totalPrice;
-        $orders->save();
-        return back()->with('message', 'Order updated successfully.');
-    }
+    // public function update(Request $request)
+    // {
+    //     $orders = Order::find($request->orderId);
+    //     $orders->itemName = $request->itemName;
+    //     $orders->price = $request->price;
+    //     $orders->itemId = $request->itemId;
+    //     $orders->quantity = $request->quantity;
+    //     $orders->totalPrice = $request->totalPrice;
+    //     $orders->save();
+    //     return back()->with('message', 'Order updated successfully.');
+    // }
 
     public function delete($orderId)
     {

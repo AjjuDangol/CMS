@@ -1,8 +1,15 @@
 @extends('layouts.main')
 @section('content')
-    <div class="mb-5">
-        <img src="../image/abc.jpg" alt="" height="1000" width="100%">
-    </div>
+<div class="mb-5">
+    <img src="../image/abc.jpg" alt="" height="800px" width="100%" style="position: relative">
+    <div class="d-flex align-items-start" style="position: absolute; top: 60%; left: 40%;">
+        <marquee behavior="scroll" direction="left">
+            <h1 class="">E<span class="ease ">A</span>SE CANTEEN
+            <br></h1>
+            <h1 class="fs-1 ms-4">
+        Test The Best</h1>
+        </marquee>
+</div>
     <div class="container d-flex justify-content-center mt-5 mb-5">
         <h1>OUR MENU</h1>
     </div>

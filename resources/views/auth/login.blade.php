@@ -67,7 +67,7 @@
               </div>
               <div class="mb-3">
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="dropdownCheck" name="remember">
+                  <input type="checkbox" class="form-check-input"  id="remember_me" name="remember">
                   <label class="form-check-label" for="dropdownCheck">
                     Remember me
                   </label>

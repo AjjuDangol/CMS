@@ -22,7 +22,7 @@
               <td>
                   <a href="/addPayment/{{ $order->orderId }}" class="btn btn-info">Pay</a>
 
-                  <a href="/deleteOrder/{{ $order->orderId }}" class="btn btn-danger">Delete</a>
+                  <a href="/deleteOrder/{{ $order->orderId }}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
               </td>
             </tr>
             @endforeach

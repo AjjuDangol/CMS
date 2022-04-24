@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/',[HomeController::class,'home'])->name('home');
-Route::get('/adminhome',[HomeController::class,'adminHome'])->name('adminhome');
+// Route::get('/adminhome',[HomeController::class,'adminHome'])->name('adminhome');
 Route::get('/menu',[userMenuController::class,'menu'])->name('menu');
 
 Route::get('/addItem',[ItemController::class,'index'])->name('addItem');
@@ -59,7 +59,7 @@ Route::get('/editOrder/{orderId}',[orderController::class,'edit'])->name('editOr
 Route::post('/updateOrder',[orderController::class,'updateOrder'])->name('updateOrder');
 Route::get('/deleteOrder/{orderId}',[orderController::class,'delete'])->name('deleteOrder');
 Route::get('/adminOrder',[orderController::class,'adminOrder'])->name('adminOrder');
-Route::get('/notification/{userId}',[orderController::class,'notification'])->name('notification');
+Route::get('/notification/{id}',[orderController::class,'notification'])->name('notification');
 
 
 Route::post('/createPayment',[PaymentController::class,'create'])->name('createPayment');

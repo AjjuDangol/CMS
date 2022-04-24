@@ -11,6 +11,20 @@ $('#addStar').change('.star', function(e) {
     });
 
 
+
+function quantityValidation(){
+    var a=parseInt(document.getElementById('quantity').value);
+
+    if(a < 1){
+        document.getElementById('error').innerHTML = "Select atleast one item";
+        document.getElementById('button').style.visibility='hidden';
+    }
+
+    if(a > 0){
+        document.getElementById('error').style.visibility="hidden";
+        document.getElementById('button').style.visibility='visible';
+    }
+}
 // $('#stars').on('click',function(){
 //     $(this).addClass('active');
 // })

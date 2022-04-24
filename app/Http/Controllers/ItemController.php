@@ -18,6 +18,14 @@ class ItemController extends Controller
 
     //add data in item
     public function create(Request $request) {
+        $request->validate([
+            'itemName' => 'required',
+            'image'=>'required',
+            'category'=>'required',
+            'description'=>'required',
+            'price'=>'required'
+        ]);
+
         $item = new Item();
         $item->itemName = $request->itemName;
         $item->description = $request->description;
@@ -46,6 +54,13 @@ class ItemController extends Controller
 
     //update data of item
     public function update(Request $request) {
+        $request->validate([
+            'itemName' => 'required',
+            'image'=>'required',
+            'category'=>'required',
+            'description'=>'required',
+            'price'=>'required'
+        ]);
         $items = Item::find($request->itemId);
         $items->itemName = $request->itemName;
         $items->description = $request->description;

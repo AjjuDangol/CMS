@@ -97,8 +97,11 @@
 
                                                 <textarea id="comment" name="review" cols="45" rows="8" style="width: 500px"></textarea>
                                             </p>
+                                            @error('review')
+                                            <span class="text-danger">! {{ $message }}</span>
+                                            @enderror
                                             <div class="text-center">
-                                                <button type="submit" class="btn btn-primary">Add &rarr;</button>
+                                                <button type="submit" class="btn btn-primary">Add </button>
                                             </div>
 
                                             </div>

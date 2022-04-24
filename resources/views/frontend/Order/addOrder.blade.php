@@ -34,18 +34,21 @@
             </div>
             <div class="col-6">
                 <div class="mb-3">
-                    <label for="quant" class="form-label " ><h3>Quantity</h3></label>
-                    <input type="number" name="quantity" id="quantity" class="form-control value">
+                    <label for="quant" class="form-label " ><h3>Quantity</h3></label><br>
+
+                    <input type="number" name="quantity" id="quantity" class="form-control value" onkeyup="quantityValidation()">
+                    <label for="" id="error"></label>
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="ItemPrice" class="form-label"><h3>Total Price</h3></label>
+
                 <input type="text" name="totalPrice" class="form-control" id="totalPrice" readonly onclick="price()">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Add &rarr;</button>
-        <button type="button"  id="button" class="btn btn-primary">Add &rarr;</button>
+        <button type="submit" class="btn btn-primary" id="button">Add </button>
+        {{-- <button type="button"  id="button" class="btn btn-primary">Add &rarr;</button> --}}
 
 
     </form>

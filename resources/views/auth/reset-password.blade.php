@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -33,32 +33,35 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-guest-layout> --}}
 
 
 
-
-{{-- @extends('layouts.main')
+@extends('layouts.main')
 @section('content')
     <x-jet-validation-errors class="mb-4" />
         <div class="s card transparent container mt-5">
-            <form method="POST" action="{{ route('password.update') }}" class="px-5 py-3 container  " >
+            <form method="POST" class="px-5 py-3 container  " action="{{ route('password.update') }}">
                 @csrf
                 <input type="hidden" name="token" value="{{ $request->route('token') }}">
               <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" :value="old('email', $request->email)" required autofocus >
+                <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" id="exampleDropdownFormEmail1" placeholder="email@example.com">
               </div>
               <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" >
+                <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
               </div>
               <div class="mb-3">
-                <label for="password_confirmation" class="form-label">Confirm Password</label>
-                <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" >
               </div>
-              <button type="submit" class="btn btn-primary">Reset Password</button>
+              <div class="mb-3">
+                <label for="exampleDropdownFormPassword1" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Password">
+              </div>
+              <div class="text-center">
+                  <button type="submit" class="btn btn-primary ml-4 text-center">Reset Password</button>
+              </div>
             </form>
         </div>
 
-@endsection --}}
+@endsection

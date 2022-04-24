@@ -20,7 +20,7 @@ class PaymentController extends Controller
         $payment->save();
 
         // return back()->with('message', 'Order added successfully');
-        return redirect()->route('createPayment');
+        return redirect()->route('frontend.menu');
     }
 
     public function index($orderId) {

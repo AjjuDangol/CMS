@@ -111,9 +111,8 @@
             @endif
             <div class="dropdown-divider"></div>
             <div class="text-center m-4">
-                <button class="ml-4">
-                    Register
-                </button>
+
+              <button type="submit" class="btn btn-primary ml-4">Register</button>
                 <br>
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     Already registered?

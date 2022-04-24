@@ -34,7 +34,7 @@
             <label for="ItemPrice" class="form-label">Total Price</label>
             <input type="text" name="totalPrice" class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary">Edit &rarr;</button>
+        <button type="submit" class="btn btn-primary">Edit </button>
     </form>
 
 @endsection

@@ -9,12 +9,12 @@ use App\Models\home;
 
 class HomeController extends Controller
 {
+    // public function home() {
+    //     $item = Item::all();
+    //     $menu = Menu::all();
+    //     return view('admin.adminhome', compact('menu','item'));
+    // }
     public function home() {
-        $item = Item::all();
-        $menu = Menu::all();
-        return view('admin.adminhome', compact('menu','item'));
-    }
-    public function adminHome() {
         $item = Item::all();
         $menu = Menu::all();
         return view('frontend.home.home', compact('menu','item'));

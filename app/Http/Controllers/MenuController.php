@@ -12,6 +12,9 @@ class MenuController extends Controller
     }
 
     public function create(Request $request) {
+        $request->validate([
+            'menuName' => 'required',
+        ]);
         $menu = new Menu();
         $menu->menuName = $request->menuName;
         $menu->save();
@@ -24,6 +27,9 @@ class MenuController extends Controller
     }
 
     public function updateMenu(Request $request) {
+        $request->validate([
+            'menuName' => 'required',
+        ]);
         $menus = Menu::find($request->menuId);
         $menus->menuName = $request->menuName;
         $menus->save();

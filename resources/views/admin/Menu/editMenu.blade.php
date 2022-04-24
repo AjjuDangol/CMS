@@ -11,11 +11,14 @@
     <form action="{{ route('updateMenu') }}" method="post">
         @csrf
         <input type="hidden" name="menuId" value="{{ $menu->menuId }}">
-        <div class="mb-3">
+        <div class="mb-3 container">
             <label for="menuName" class="form-label">Menu Name</label>
-            <input type="text" name="menuName" class="form-control" value="{{ $menu->menuName }}">
+            <input type="text" name="menuName" class="form-control mb-3" value="{{ $menu->menuName }}">
+            @error('menuName')
+                <span class="text-danger">! {{ $message }}</span>
+            @enderror
+            <div class="text-center"><button type="submit" class="btn btn-primary">Edit </button></div>
         </div>
-        <button type="submit" class="btn btn-primary">Edit &rarr;</button>
     </form>
 
 @endsection
