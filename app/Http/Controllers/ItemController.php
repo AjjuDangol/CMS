@@ -39,7 +39,7 @@ class ItemController extends Controller
         return back()->with('message', 'Item added successfully');
     }
 
-    //used to show data
+    //use to show data
     public function all() {
         $items = Item::all();
         return view('admin.Item.allItem', compact('items'));
