@@ -65,14 +65,14 @@
                 <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" id="exampleDropdownFormPassword1" placeholder="Password">
               </div>
-              <div class="mb-3">
+              {{-- <div class="mb-3">
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input"  id="remember_me" name="remember">
+                  <input type="checkbox" class="form-check-input"  id="remember_me" name="remember" >
                   <label class="form-check-label" for="dropdownCheck">
                     Remember me
                   </label>
                 </div>
-              </div>
+              </div> --}}
               <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
             <div class="dropdown-divider"></div>

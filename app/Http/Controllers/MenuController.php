@@ -11,6 +11,9 @@ class MenuController extends Controller
         return view('admin.Menu.addMenu');
     }
 
+    //crud
+
+    //add menu
     public function create(Request $request) {
         $request->validate([
             'menuName' => 'required',
@@ -21,11 +24,15 @@ class MenuController extends Controller
         return back()->with('message','Menu created successfully.');
     }
 
+
+        //edit menu
     public function edit($menuId) {
         $menu = Menu::find($menuId);
         return view('admin.Menu.editMenu', compact('menu'));
     }
 
+
+    //update menu
     public function updateMenu(Request $request) {
         $request->validate([
             'menuName' => 'required',
@@ -36,11 +43,14 @@ class MenuController extends Controller
         return back()->with('message', 'Menu updated successfully.');
     }
 
+    //show all menu
     public function all() {
         $menus = Menu::all();
         return view('admin.Menu.allMenu', compact('menus'));
     }
 
+
+    //delete menu
     public function delete($menuId) {
         Menu::where('menuId',$menuId)->delete();
         return back()->with('message','Menu deleted successfully.');

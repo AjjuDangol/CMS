@@ -1,7 +1,8 @@
 $(".value").change(function(e){
     var a = $("#price").val();
     var b = $("#quantity").val();
-    var total = a * b;
+    // var c= 122.31;
+    var total = (a * b);
     $("#totalPrice").val(total);
 })
 

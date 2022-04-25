@@ -23,7 +23,7 @@
               <td>{{ $item->description }}</td>
               <td>{{ $item->price }}</td>
               <td>
-                  <a href="/editItem/{{ $item->itemId }}" class="btn btn-info">Edit</a>
+                  <a href="/editItem/{{ $item->itemId }}" class="btn btn-info mb-2">Edit</a>
                   <a href="/deleteItem/{{ $item->itemId }}" class="btn btn-danger">Delete</a>
               </td>
             </tr>

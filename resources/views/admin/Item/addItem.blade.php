@@ -45,9 +45,6 @@
                             @endforeach
 
                         </select>
-                        @error('category')
-                            <span class="text-danger">! {{ $message }}</span>
-                        @enderror
                     </div>
                 </div>
                 <div class="col">

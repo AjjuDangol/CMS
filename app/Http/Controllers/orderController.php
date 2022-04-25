@@ -16,10 +16,11 @@ class orderController extends Controller
     public function index($itemId)
     {
         $this->itemId = $itemId;
-        $items = Item::where('itemId', $this->itemId)->first();
+        $items = Item::where('itemId', $this->itemId)->first();//get itemid
         return view('frontend.Order.addOrder', compact('items'));
     }
 
+    //add in order
     public function create(Request $request)
     {
 
@@ -72,12 +73,15 @@ class orderController extends Controller
         return back()->with('message', 'Order deleted successfully.');
     }
 
+    //ALL order from user
     public function adminOrder()
     {
         $orders = Order::all();
         return view('admin.UserOrder.orders', compact('orders'));
     }
 
+
+    //for notification
     public function notification($user)
     {
         //  $user= User::where('id','user')->get();

@@ -58,25 +58,23 @@
                 <a href="{{ route('menu', ['menuId' => $m->menuId]) }}">{{ $m->menuName }}</a>
             @endforeach --}}
             <div>
-                @foreach ($menu as $m)
-                    {{-- <div role="tabpanel" class="tab-pane {{ $m->menuId == 1 ? 'active' : '' }}" id="home{{ $m->menuId }}" class="active"> --}}
-                    <div>
-                        <div class="row container mt-4 pt-4">
-                            @foreach ($item as $i)
-                                <div class="col-md-4 mb-5">
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="../image/{{ $i->image }}" class="card-img-top" height="200"
-                                            alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ $i->itemName }} - {{ $i->menu->menuName }}
-                                            </h5>
-                                            <p class="card-text">Rs. {{ $i->price }}</p>
-                                            <div class="dropdown">
-                                                <a class="btn btn-info" href="home{{ $m->menuId }}" role="button"
+                {{-- <div role="tabpanel" class="tab-pane {{ $m->menuId == 1 ? 'active' : '' }}" id="home{{ $m->menuId }}" class="active"> --}}
+                <div>
+                    <div class="row container mt-4 pt-4">
+                        @foreach ($item as $i)
+                            <div class="col-md-4 mb-5">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="../image/{{ $i->image }}" class="card-img-top" height="200" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $i->itemName }} - {{ $i->menu->menuName }}
+                                        </h5>
+                                        <p class="card-text">Rs. {{ $i->price }}</p>
+                                        <div class="dropdown">
+
+                                                <a class="btn btn-info"  role="button"
                                                     id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                     More
                                                 </a>
-
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     <div class="container">
                                                         <div class="card-header ">
@@ -94,15 +92,14 @@
 
                                                     </div>
                                                 </ul>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            </div>
+                        @endforeach
 
-                        </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
 

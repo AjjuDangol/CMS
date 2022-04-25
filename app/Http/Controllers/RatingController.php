@@ -15,8 +15,11 @@ class RatingController extends Controller
     }
 
     public function create(Request $request){
+       //validation
         $request->validate([
+            'rating'=>'required',
             'review'=>'required',
+
         ]);
         $rating = new Rating();
         $rating->itemId = $request->itemId;
