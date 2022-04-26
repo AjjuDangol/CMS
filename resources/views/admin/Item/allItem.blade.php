@@ -1,8 +1,10 @@
 @extends('layouts.main')
 @section('content')
 <div class="container">
+    {{-- Table view for data display --}}
     <table class="table">
         <thead>
+            {{-- Table Headings for all items in admin page --}}
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Item Names</th>
@@ -14,6 +16,7 @@
           </tr>
         </thead>
         <tbody>
+            {{-- table rows for items --}}
           @foreach ($items as $item)
             <tr>
               <td>{{ $item->itemId }}</td>

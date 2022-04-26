@@ -1,7 +1,8 @@
 @extends('layouts.main')
 @section('content')
-
+{{-- Table format for all orders --}}
 <table class="table">
+    {{-- table headings --}}
     <thead>
       <tr>
         <th scope="col">User Id</th>
@@ -11,6 +12,7 @@
         <th scope="col">Action</th>
       </tr>
     </thead>
+    {{-- table body --}}
     <tbody>
       @foreach ($orders as $order)
         <tr>
@@ -25,7 +27,6 @@
           </td>
         </tr>
         @endforeach
-
     </tbody>
   </table>
 @endsection

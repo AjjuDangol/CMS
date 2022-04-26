@@ -1,19 +1,17 @@
 @extends('layouts.main')
 @section('content')
-
-
     <div class="alert alert-success" role="alert">
         @if (Session::has('message'))
             {{ Session::get('message') }}
         @endif
     </div>
-
+{{-- for update of the data --}}
     <form action="{{ route('updateOrder') }}" method="post">
         @csrf
         <input type="text" name="orderId" value="{{ $order->orderId }}">
         <input type="text" name="itemId" value="{{ $items->itemId }}" hidden>
         <input type="text" name="userId" value="{{ Auth::user()->id }}" hidden>
-
+{{-- value auto generated --}}
         <div class="mb-3">
             <label for="ItemPrice" class="form-label">User Name</label>
             <input type="text" value="{{ Auth::user()->name }}" class="form-control">
@@ -35,6 +33,7 @@
             <input type="text" name="totalPrice" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Edit </button>
+        {{-- Submit button to update data --}}
     </form>
 
 @endsection

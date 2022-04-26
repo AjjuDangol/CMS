@@ -1,11 +1,12 @@
 @extends('layouts.main')
 @section('content')
+{{-- message after edit --}}
     @if (Session::has('message'))
         <div class="alert alert-success" role="alert">
             {{ Session::get('message') }}
         </div>
     @endif
-
+{{-- updateItem route for updating --}}
     <form action="{{ route('updateItem') }}" method="post">
         @csrf
         <div class="mb-3">
@@ -15,6 +16,7 @@
             <label for="menuName" class="form-label">Item Name</label>
             <input type="text" name="itemName" value="{{ $item->itemName }}" class="form-control">
         </div>
+          {{-- validation --}}
         @error('itemName')
             <span class="text-danger">! {{ $message }}</span>
         @enderror
@@ -22,6 +24,7 @@
             <label for="menuName" class="form-label">Item Image</label>
             <input type="file" name="image" class="form-control">
         </div>
+        {{-- validation --}}
         @error('image')
             <span class="text-danger">! {{ $message }}</span>
         @enderror
@@ -33,15 +36,17 @@
                     <option value="{{ $menu->menuId }}">{{ $menu->menuName }}</option>
                 @endforeach
             </select>
+              {{--
             @error('price')
                 <span class="text-danger">! {{ $message }}</span>
-            @enderror
+            @enderror --}}
 
         </div>
         <div class="mb-3">
             <label for="menuName" class="form-label">Description</label>
             <input type="text" name="description" value="{{ $item->description }}" class="form-control">
         </div>
+          {{-- validation --}}
         @error('description')
             <span class="text-danger">! {{ $message }}</span>
         @enderror
@@ -49,6 +54,7 @@
             <label for="menuName" class="form-label">Price</label>
             <input type="text" name="price" value="{{ $item->price }}" class="form-control">
         </div>
+          {{-- validation --}}
         @error('price')
             <span class="text-danger">! {{ $message }}</span>
         @enderror

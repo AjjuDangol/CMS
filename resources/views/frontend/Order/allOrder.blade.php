@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="container">
+    {{-- Display data in table --}}
     <table class="table">
         <thead>
           <tr>

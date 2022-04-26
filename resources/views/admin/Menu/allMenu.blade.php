@@ -2,13 +2,16 @@
 @section('content')
 
 <br>
+{{-- message --}}
 @if (Session::has('message'))
     <div class="alert alert-danger" role="alert">
       {{ Session::get('message') }}
     </div>
 @endif
 <div class="container">
+     {{-- Table view for data display --}}
     <table class="table">
+         {{-- Table Headings for all menu in admin page --}}
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -17,6 +20,7 @@
           </tr>
         </thead>
         <tbody>
+            {{-- table rows for items --}}
           @foreach ($menus as $menu)
             <tr>
               <td>{{ $menu->menuId }}</td>

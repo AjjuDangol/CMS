@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="container">
+        {{-- Rating of users --}}
         <table class="table">
             <thead>
                 <tr>

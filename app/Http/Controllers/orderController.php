@@ -46,26 +46,6 @@ class orderController extends Controller
         return view('frontend.Order.allOrder', compact('orders'));
     }
 
-    //get id and show edit page
-    // public function edit($orderId)
-    // {
-    //     $items = Item::all();
-    //     $order = Order::find($orderId);
-    //     return view('frontend.Order.editOrder', compact('order', 'items'));
-    // }
-
-    //update data of item
-    // public function update(Request $request)
-    // {
-    //     $orders = Order::find($request->orderId);
-    //     $orders->itemName = $request->itemName;
-    //     $orders->price = $request->price;
-    //     $orders->itemId = $request->itemId;
-    //     $orders->quantity = $request->quantity;
-    //     $orders->totalPrice = $request->totalPrice;
-    //     $orders->save();
-    //     return back()->with('message', 'Order updated successfully.');
-    // }
 
     public function delete($orderId)
     {
